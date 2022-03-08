@@ -8,12 +8,23 @@ import uvicorn
 import services as _services, schemas as _schemas
 
 import http3
-
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 
 app = _fastapi.FastAPI()
 
+origins = [
+    "https://abdelrahmanelkhradely.github.io/pokemonappfrontend/"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 
 @app.post("/api/users")
