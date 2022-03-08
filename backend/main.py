@@ -15,7 +15,7 @@ from fastapi.encoders import jsonable_encoder
 app = _fastapi.FastAPI()
 
 origins = [
-    "https://abdelrahmanelkhradely.github.io/pokemonappfrontend/"
+    "https://pokemon-project-msnzd6nt2-abdelrahmanelkhradely.vercel.app/"
 ]
 
 app.add_middleware(
